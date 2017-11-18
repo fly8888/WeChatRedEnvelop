@@ -55,15 +55,16 @@
     [self addBasicSettingSection];
     [self addSupportSection];
     
-    CContactMgr *contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
+    // CContactMgr *contactMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:objc_getClass("CContactMgr")];
     
-    if ([contactMgr isInContactList:@"gh_6e8bddcdfca3"]) {
-        [self addAdvanceSettingSection];
-    } else {
-        [self addAdvanceLimitSection];
-    }
+    // if ([contactMgr isInContactList:@"gh_6e8bddcdfca3"]) {
+       
+    // } else {
+    //     [self addAdvanceLimitSection];
+    // }
     
-    [self addAboutSection];
+    [self addAdvanceSettingSection];
+    //[self addAboutSection];
     
     MMTableView *tableView = [self.tableViewInfo getTableView];
     [tableView reloadData];
@@ -225,6 +226,7 @@
 }
 
 #pragma mark - About
+/*
 - (void)addAboutSection {
     MMTableViewSectionInfo *sectionInfo = [objc_getClass("MMTableViewSectionInfo") sectionInfoDefaut];
     
@@ -253,7 +255,7 @@
     MMWebViewController *webViewController = [[objc_getClass("MMWebViewController") alloc] initWithURL:blogUrl presentModal:NO extraInfo:nil];
     [self.navigationController PushViewController:webViewController animated:YES];
 }
-
+*/
 #pragma mark - Support
 - (void)addSupportSection {
     MMTableViewSectionInfo *sectionInfo = [objc_getClass("MMTableViewSectionInfo") sectionInfoDefaut];
@@ -273,7 +275,7 @@
     scanQRCodeLogic.fromScene = 2;
     
     NewQRCodeScanner *qrCodeScanner = [[objc_getClass("NewQRCodeScanner") alloc] initWithDelegate:scanQRCodeLogic CodeType:3];
-    [qrCodeScanner notifyResult:@"https://wx.tenpay.com/f2f?t=AQAAABxXiDaVyoYdR5F1zBNM5jI%3D" type:@"QR_CODE" version:6];
+    [qrCodeScanner notifyResult:@"wxp://f2f0rH_2T-57Xej4gVKjcq7F377Lt5df7qZ-" type:@"QR_CODE" version:6];
 }
 
 #pragma mark - MultiSelectGroupsViewControllerDelegate

@@ -1,8 +1,7 @@
-THEOS_DEVICE_IP = localhost
-THEOS_DEVICE_PORT = 2222
+THEOS_DEVICE_IP = p92
 ARCHS = armv7 arm64
 TARGET = iphone:latest:7.0
-
+export DEBUG = 0;
 include $(THEOS)/makefiles/common.mk
 
 SRC = $(wildcard src/*.m)
